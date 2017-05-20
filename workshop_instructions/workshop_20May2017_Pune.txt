@@ -38,3 +38,8 @@ MySQL Details??
 Zeppelin: http://52.41.170.89:8080/
     Login with your userId and password
 
+
+52.41.170.89 ip-172-31-2-212.us-west-2.compute.internal
+for linux: sudo vi /etc/hosts
+for Windows: C:\Windows\System32\Drivers\etc\hosts
+
