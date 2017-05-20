@@ -1,0 +1,40 @@
+Problem statement:
+
+Assume that the World Cricket Cup is being sponsored by a company ABC.
+ABC has a mobile application for the world cup viewers to watch the score on demand.
+When ever the viewer views the score, an event is captured by the BackEnd system
+along with the PersonID.
+
+Now ABC wants to understand the score viewing patterns of its people so that it can
+1. See how many people are viewing every 5 seconds.
+2. The total views till date.
+3. See how many people are viewing in the past 1 hour.
+    This will help them identify the peak times and broadcast advertisements for better impressions.
+
+Currently ABC does not have a system that can show the above stats realtime.
+Also, ABC wants to leverage the stats realtime to programatically push the advertisements at a seconds level.
+
+Expectation: ABC is looking for an implementation that can process the above stats realtime.
+
+
+
+
+Tips:
+-----
+How to Produce Events?
+    The kafka utility in the Utilities folder of the application helps you publish the personIds to Kafka topic.
+
+How to consume the events realtime?
+    Write a Spark Streaming Application to consume the events from a given Topic and write the derived stats to the MYSQL Database.
+
+MySQL Details??
+    hostName: kogni-mysql-t2l.ca8crwngvcnr.us-west-2.rds.amazonaws.com
+    port: 3306
+    user: clairvoyant
+    password: clairvoyant
+    database: sparkworkshop
+    table: create table mystats(topicName varchar(200), cur_time timestamp default CURRENT_TIMESTAMP, views LONG, running_views LONG, agg_views LONG);
+
+Zeppelin: http://52.41.170.89:8080/
+    Login with your userId and password
+
